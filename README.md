@@ -11,5 +11,4 @@ RP Files: [https://github.com/parv66/Bridge-Jam-Addon/RP](https://github.com/par
 BP Files: [https://github.com/parv66/Bridge-Jam-Addon/BP](https://github.com/parv66/Bridge-Jam-Addon/BP).
 
 Good Luck to us! 
-
-     - @LeGend077
+                    - @LeGend077
