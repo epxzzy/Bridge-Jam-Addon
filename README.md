@@ -6,9 +6,9 @@ Our Team Members: Parv66, LeGend077, Eldyn.
 
 Todo List: [https://github.com/parv66/Bridge-Jam-Addon/projects/2](https://github.com/parv66/Bridge-Jam-Addon/projects/2?add_cards_query=is%3Aopen).
 
-RP Files: [https://github.com/parv66/Bridge-Jam-Addon/RP](https://github.com/parv66/Bridge-Jam-Addon/RP)
+RP Files: [https://github.com/parv66/Bridge-Jam-Addon/tree/main/RP](https://github.com/parv66/Bridge-Jam-Addon/tree/main/RP)
 
-BP Files: [https://github.com/parv66/Bridge-Jam-Addon/BP](https://github.com/parv66/Bridge-Jam-Addon/BP).
+BP Files: [https://github.com/parv66/Bridge-Jam-Addon/tree/main/BP](https://github.com/parv66/Bridge-Jam-Addon/tree/main/BP)
 
 Good Luck to us! 
                     - LeGend077
