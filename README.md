@@ -1,6 +1,7 @@
 # Bridge-Jam-Addon
 
-Place to Store Files and have To do list for our Add-On from the [bridge. Add-On Jam](https://github.com/bridge-core/bridge-jam). 
+Place to Store Files and have To do list for our Add-On from the [bridge. Add-On Jam](https://github.com/bridge-core/bridge-jam).
+
 ![icon](https://github.com/parv66/Bridge-Jam-Addon/tree/main/image.png)
 
 
