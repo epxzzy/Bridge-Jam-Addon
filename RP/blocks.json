@@ -1,0 +1,7 @@
+{
+	"format_version": [1, 1, 0],
+	"jam:void_crystal": {
+		"textures": "void_crystal",
+		"sound": "stone"
+	}
+}
