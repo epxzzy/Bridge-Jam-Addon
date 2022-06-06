@@ -1,0 +1,25 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "jam:void_crystal",
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:geometry": "geometry.void_crystal",
+            "minecraft:loot": "loot_tables/blocks/void_crystal.json",
+            "minecraft:destroy_time": 0.9,
+            "minecraft:explosion_resistance": 3,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#00FF00",
+            "minecraft:block_light_absorption": 0,
+            "minecraft:block_light_emission": 0.25,
+            "minecraft:material_instances": {
+                "*": {
+                    "render_method": "blend",
+                    "texture": "void_crystal"
+                }
+            }
+        }
+    }
+}

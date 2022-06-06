@@ -1,0 +1,43 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Void Awakening 6 BP",
+    "description": "Bridge. Jam Add-On",
+    "uuid": "31d27d88-4674-4b01-b763-d4ec29e6dfea",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      16,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "description": "_",
+      "uuid": "30e0697c-3e0b-4dae-969d-af99a70a0107",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "3f7a5ea0-ae75-46cd-9380-2defe2909b40",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "metadata": {
+    "authors": ["LeGend077", "Eldyn", "Parv66"]
+  }
+}
