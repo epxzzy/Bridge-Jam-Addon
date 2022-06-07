@@ -1,0 +1,62 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "jam:void_sword",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:display_name": {
+				"value": "Void Sword"
+			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.sword"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 1461
+			},
+			"minecraft:damage": 8,
+			"minecraft:icon": {
+				"texture": "void_sword"
+			},
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 12
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 8
+					}
+				],
+				"on_dig":{
+                    "event":"damage_item"
+                }
+			},
+			"minecraft:weapon": {},
+			"tag:minecraft:is_sword": {}
+		},
+		"events": {
+            "on_dig":{
+                "sequence": [
+                    {
+                        "damage": {
+                            "amount": 1,
+                            "type": "durability",
+                            "target":"self"
+                        }
+                    }
+                ]
+            }
+        }
+	}
+}
