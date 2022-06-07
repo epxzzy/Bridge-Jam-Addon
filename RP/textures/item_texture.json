@@ -1,0 +1,24 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "void_shard":{
+            "textures":"textures/items/void_crystal_shard"
+        },
+        "void_sword":{
+            "textures":"textures/items/void_sword"
+        },
+        "void_pickaxe":{
+            "textures":"textures/items/void_pickaxe"
+        },
+        "void_axe":{
+            "textures":"textures/items/void_axe"
+        },
+        "void_shovel":{
+            "textures":"textures/items/void_shovel"
+        },
+        "void_hoe":{
+            "textures":"textures/items/void_hoe"
+        }
+    }
+}

@@ -1,6 +1,7 @@
 ## Entities
 
 entity.jam:voidman.name=Voidman
+entity.jam:zombie_infected.name=Zombie Voidified
 
 ## Blocks
 
