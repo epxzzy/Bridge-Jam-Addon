@@ -19,6 +19,30 @@
         },
         "void_hoe":{
             "textures":"textures/items/void_hoe"
+        },
+        "void_helmet":{
+            "textures":"textures/items/void_helmet"
+        },
+        "void_chestplate":{
+            "textures":"textures/items/void_chestplate"
+        },
+        "void_leggings":{
+            "textures":"textures/items/void_leggings"
+        },
+        "void_boots":{
+            "textures":"textures/items/void_boots"
+        },
+        "void_projectile":{
+            "textures":"textures/items/void_projectile"
+        },
+        "void_heart":{
+            "textures":"textures/items/void_heart"
+        },
+        "void_sword_ultra": {
+            "textures": "textures/items/void_sword_ultra2"
+        },
+        "void_eye":{
+            "textures":"textures/items/void_eye"
         }
     }
 }

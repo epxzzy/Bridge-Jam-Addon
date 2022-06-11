@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.voidman_charged":{
+            "initial_state" : "default",
+            "states" : {
+                "default" : {
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true,
+                    "transitions" : [
+                        { "charged" : "query.is_charged" }
+                    ]
+                },
+                "charged" : {
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true,
+                    "animations" : [ 
+                        { "charged" : "query.is_charged" } 
+                    ],
+                    "transitions" : [
+                        { "default" : "!query.is_charged" }
+                    ]
+                }
+            }
+        }
+    }
+}

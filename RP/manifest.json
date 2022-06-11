@@ -1,9 +1,9 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Void Awakening 8 RP",
+    "name": "Void Awakening 17 RP",
     "description": "Bridge. Jam Add-On",
-    "uuid": "5f7a5ea0-ae75-46cd-9380-2defe2909b40",
+    "uuid": "11111111-1111-11ae-bb4c-015257886b39",
     "version": [
       1,
       0,
@@ -19,7 +19,7 @@
     {
       "type": "resources",
       "description": "_",
-      "uuid": "5082aa18-4fd1-4cf3-931e-a36fbcaf5cd1",
+      "uuid": "11111111-1111-1111-a4dd-d95e5258d3a9",
       "version": [
         1,
         0,

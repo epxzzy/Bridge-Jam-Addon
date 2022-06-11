@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "jam:void_portal",
+            "geometry":{
+                "default": "geometry.void_portal"
+            },
+            "textures": {
+                "default":"textures/entity/void_portal"
+            },
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "render_controllers": ["controller.render.bat"],
+            "scripts": {
+                "animate": ["portal_opening","portal_closing"]
+            },
+            "sound_effects": {
+                "open": "block.end_portal.spawn"
+            },
+              "animations": {
+                "portal_opening": "controller.animation.portal_appear",
+                "portal_open_anim": "animation.portal.appear",
+                "portal_closing": "controller.animation.portal_fall",
+                "portal_close_anim": "animation.portal.fall"
+              }
+        }
+    }
+}

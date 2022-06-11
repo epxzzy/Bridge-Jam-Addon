@@ -6,6 +6,12 @@
 	"texture_data": {
 		"void_crystal":{
             "textures":"textures/blocks/void_crystal"
-        }
+        },
+		"void_crystal_ore":{
+			"textures":"textures/blocks/void_ore"
+		},
+		"void_crystal_ore_deepslate":{
+			"textures":"textures/blocks/deepslate_void_ore"
+		}
     }
 }

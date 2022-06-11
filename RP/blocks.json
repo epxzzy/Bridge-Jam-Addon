@@ -3,5 +3,13 @@
 	"jam:void_crystal": {
 		"textures": "void_crystal",
 		"sound": "stone"
+	},
+	"jam:void_crystal_ore": {
+		"textures": "void_crystal_ore",
+		"sound": "stone"
+	},
+	"jam:void_crystal_ore_deepslate": {
+		"textures": "void_crystal_ore_deepslate",
+		"sound": "stone"
 	}
 }

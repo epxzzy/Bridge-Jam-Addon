@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.portal_appear":{
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "sound_effects": [{"effect": "open"}],
+                    "animations": [
+                        "portal_open_anim"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.is_alive"
+                        }
+                    ]
+                },
+                "default": {
+                    "transitions": [
+                    ]
+                }
+            }
+        },
+        "controller.animation.portal_fall": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"dead": "!query.is_alive"
+						}
+					]
+				},
+				"dead": {
+					"animations": ["portal_close_anim"]
+				}
+			}
+		}
+    }
+}

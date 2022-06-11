@@ -2,15 +2,15 @@
     "format_version": "1.8.0",
     "minecraft:client_entity": {
         "description": {
-            "identifier": "jam:voidman",
+            "identifier": "jam:void_herald",
             "geometry":{
-                "default": "geometry.voidman"
+                "default": "geometry.void_herald"
             },
             "textures": {
-                "default":"textures/entity/voidman_normal"
+                "default":"textures/entity/void_herald"
             },
             "materials": {
-                "default":"entity_emissive_alpha"
+                "default": "entity_emissive_alpha"
             },
             "render_controllers": ["controller.render.bat"],
             "scripts": {
@@ -18,7 +18,6 @@
                   "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 28.65;"
                 ]
               },
-              
               "animations": {
                 "look_at_target_default": "animation.humanoid.look_at_target.default",
                 "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",

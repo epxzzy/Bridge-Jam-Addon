@@ -1,8 +1,18 @@
 ## Entities
 
 entity.jam:voidman.name=Voidman
-entity.jam:zombie_infected.name=Zombie Voidified
+entity.jam:zombie_infected.name=Infected Zombie
+entity.jam:skeleton_infected.name=Infected Skeleton
+entity.jam:void_portal.name=Void Portal
+entity.jam:voidman_ranged.name=Shooter Voidman
+entity.jam:void_herald.name=Void Herald
 
 ## Blocks
 
 tile.jam:void_crystal.name=Void Crystal
+tile.jam:void_crystal_ore.name=Void Crystal Ore
+tile.jam:void_crystal_ore_deepslate.name=Void Crystal Deepslate Ore
+
+## Others
+
+item.jam:void_sword_ultra.name=Void God Sword
