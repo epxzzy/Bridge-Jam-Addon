@@ -1,0 +1,19 @@
+{
+    "pools": [{
+        "rolls":{
+            "max": 3,
+            "min": 0
+        },
+        "entries": [{
+            "name": "jam:void_shard",
+            "type": "item",
+            "functions": [{
+                "function": "set_count",
+                "count":{
+                    "min": 0,
+                    "max": 1
+                }
+            }]
+        }]
+    }]
+}

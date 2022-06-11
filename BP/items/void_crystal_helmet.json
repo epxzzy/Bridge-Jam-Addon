@@ -1,0 +1,46 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "jam:void_helmet",
+			"category": "equipment"
+		},
+		"components": {
+			// Helmet category
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.helmet"
+			},
+			"minecraft:icon": {
+				"texture": "void_helmet"
+			},
+			"minecraft:display_name": {
+				"value": "Void Crystal Helmet"
+			},
+			"minecraft:max_stack_size": 1,
+			// Helm enchantment slot
+			"minecraft:enchantable": {
+				"value": 10,
+				"slot": "armor_head"
+			},
+			"minecraft:armor": {
+				"protection": 4
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": ["minecraft:stick"],
+						"repair_amount": "context.other->query.remaining_durability + 0.05 * context.other->query.max_durability"
+					}
+				]
+			},
+			// Wearable head slot
+			"minecraft:wearable": {
+				"dispensable": true,
+				"slot": "slot.armor.head"
+			},
+			"minecraft:durability": {
+				"max_durability": 540
+			}
+		}
+	}
+}

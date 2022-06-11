@@ -1,0 +1,31 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SES",
+            "SVS",
+            "SES"
+        ],
+        "key": {
+            "S": {
+                "item": "jam:void_shard"
+            },
+            "E": {
+                "item": "jam:void_eye"
+            },
+            "V": {
+                "item": "jam:void_sword"
+            }
+        },
+        "result": {
+            "item": "jam:void_sword_ultra",
+            "count": 1
+        },
+        "description": {
+            "identifier": "jam:void_sword_ultra_recipe"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "description": {
+            "identifier": "jam:void_portal",
+            "population_control": "animal"
+        },
+        "conditions": [{
+            "minecraft:biome_filter":[
+                {
+                    "test": "has_biome_tag",
+                    "operator": "==",
+                    "value": "animal"
+                }
+            ],
+            "minecraft:brightness_filter": {
+                "adjust_for_weather": false,
+                "min": 0,
+                "max": 15
+            },
+            "minecraft:herd":[{
+                "min_size": 1,
+                "max_size": 1
+            }],
+            "minecraft:difficulty_filter": {
+                "min": "normal",
+                "max": "hard"
+            },
+            "minecraft:spawns_on_surface": {},
+            "minecraft:weight": {
+                "default": 20
+            }
+        }]
+    }
+}

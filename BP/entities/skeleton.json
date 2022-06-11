@@ -2,12 +2,116 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
       "description": {
-          "identifier": "jam:skeleton_infected",
+          "identifier": "minecraft:skeleton",
           "is_spawnable": true,
           "is_summonable": true,
           "is_experimental": false
       },
       "component_groups": {
+          "jam:transformed": {
+              "minecraft:transformation": {
+                  "begin_transform_sound": "example",
+                  "drop_equipment": false,
+                  "drop_inventory": false,
+                  "into": "jam:skeleton_infected",
+                  "keep_level": false,
+                  "keep_owner": false,
+                  "preserve_equipment": true,
+                  "transformation_sound": "convert_to_drowned"
+              },
+              "minecraft:type_family": {
+                  "family": [
+                     "void"
+                  ]
+              }
+          },
+          "in_powder_snow": {
+              "minecraft:is_shaking": {},
+              "minecraft:timer": {
+                  "looping": false,
+                  "time": 20,
+                  "time_down_event": {
+                      "event": "become_stray_event"
+                  }
+              },
+              "minecraft:environment_sensor": {
+                  "triggers": [
+                      {
+                          "filters": {
+                              "test": "in_block",
+                              "subject": "self",
+                              "operator": "!=",
+                              "value": "minecraft:powder_snow"
+                          },
+                          "event": "got_out_of_powder_snow"
+                      }
+                  ]
+              }
+          },
+          "got_out_of_powder_snow_environment_sensor": {
+              "minecraft:environment_sensor": {
+                  "triggers": [
+                      {
+                          "filters": {
+                              "test": "is_underwater",
+                              "subject": "self",
+                              "operator": "==",
+                              "value": true
+                          },
+                          "event": "minecraft:melee_mode"
+                      },
+                      {
+                          "filters": {
+                              "test": "has_ranged_weapon",
+                              "subject": "self",
+                              "operator": "==",
+                              "value": false
+                          },
+                          "event": "minecraft:melee_mode"
+                      },
+                      {
+                          "filters": {
+                              "all_of": [
+                                  {
+                                      "test": "in_water",
+                                      "subject": "self",
+                                      "operator": "==",
+                                      "value": false
+                                  },
+                                  {
+                                      "test": "has_ranged_weapon",
+                                      "subject": "self",
+                                      "operator": "==",
+                                      "value": true
+                                  }
+                              ]
+                          },
+                          "event": "minecraft:ranged_mode"
+                      }
+                  ]
+              }
+          },
+          "minecraft:lightning_immune": {
+              "minecraft:damage_sensor": {
+                  "triggers": {
+                      "on_damage": {
+                          "filters": {
+                              "other_with_families": "lightning"
+                          }
+                      },
+                      "deals_damage": false
+                  }
+              }
+          },
+          "become_stray": {
+              "minecraft:transformation": {
+                  "into": "minecraft:stray",
+                  "transformation_sound": "convert_to_stray",
+                  "keep_level": true,
+                  "drop_inventory": true,
+                  "preserve_equipment": true
+              }
+          },
           "minecraft:ranged_attack": {
               "minecraft:behavior.ranged_attack": {
                   "priority": 0,
@@ -45,7 +149,7 @@
                               "operator": "==",
                               "value": "minecraft:powder_snow"
                           },
-                          "event": "minecraft:melee_mode"
+                          "event": "got_in_powder_snow"
                       }
                   ]
               }
@@ -87,7 +191,7 @@
                               "operator": "==",
                               "value": "minecraft:powder_snow"
                           },
-                          "event": "minecraft:ranged_mode"
+                          "event": "got_in_powder_snow"
                       }
                   ]
               }
@@ -104,10 +208,13 @@
               "height": 1.9
           },
           "minecraft:type_family": {
-            "family": [
-      "void"
-    ]
-        },
+              "family": [
+                  "skeleton",
+                  "undead",
+                  "monster",
+                  "mob"
+              ]
+          },
           "minecraft:breathable": {
               "total_supply": 15,
               "suffocate_time": 0,
@@ -146,6 +253,22 @@
           "minecraft:movement.basic": {},
           "minecraft:jump.static": {},
           "minecraft:can_climb": {},
+          "minecraft:damage_sensor": {
+              "triggers": [
+                  {
+                      "on_damage": {
+                          "filters": {
+                              "test":"is_family",
+                              "subject": "other",
+                              "value": "void"
+                          },
+                          "event": "jam:transformation"
+                      },
+                      "cause": "fatal",
+                      "deals_damage": true
+                  }
+              ]
+          },
           "minecraft:nameable": {},
           "minecraft:equipment": {
               "table": "loot_tables/entities/skeleton_gear.json"
@@ -411,35 +534,45 @@
               "priority": 1
           },
           "minecraft:behavior.nearest_attackable_target": {
-            "must_see": true, //If true, potential target must be in mob's line of sight
-            "reselect_targets": true, //Allows mob to select new target, if one is closer than current
-            "within_radius": 25.0,
-            "entity_types": [
-              {
-                "filters": { //Entities to attack
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                "max_dist": 48.0
-              },
-              {
-                "filters": { //Entities to attack
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "zombie"
-                },
-                "max_dist": 48.0
-              },
-              {
-                "filters": { //Entities to attack
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "skeleton"
-                },
-                "max_dist": 48.0
-              }
-            ]
+              "priority": 2,
+              "must_see": true,
+              "reselect_targets": true,
+              "entity_types": [
+                  {
+                      "filters": {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "player"
+                      },
+                      "max_dist": 16
+                  },
+                  {
+                      "filters": {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "irongolem"
+                      },
+                      "max_dist": 16
+                  },
+                  {
+                      "filters": {
+                          "all_of": [
+                              {
+                                  "test": "is_family",
+                                  "subject": "other",
+                                  "value": "baby_turtle"
+                              },
+                              {
+                                  "test": "in_water",
+                                  "subject": "other",
+                                  "operator": "!=",
+                                  "value": true
+                              }
+                          ]
+                      },
+                      "max_dist": 16
+                  }
+              ]
           },
           "minecraft:behavior.flee_sun": {
               "priority": 2,
@@ -490,6 +623,13 @@
           "minecraft:conditional_bandwidth_optimization": {}
       },
       "events": {
+          "jam:transformation": {
+              "add": {
+                  "component_groups": [
+                      "jam:transformed"
+                  ]
+              }
+          },
           "minecraft:entity_spawned": {
               "add": {
                   "component_groups": [
@@ -497,10 +637,44 @@
                   ]
               }
           },
+          "become_stray_event": {
+              "add": {
+                  "component_groups": [
+                      "become_stray"
+                  ]
+              }
+          },
+          "got_in_powder_snow": {
+              "add": {
+                  "component_groups": [
+                      "in_powder_snow"
+                  ]
+              }
+          },
+          "got_out_of_powder_snow": {
+              "remove": {
+                  "component_groups": [
+                      "in_powder_snow"
+                  ]
+              },
+              "add": {
+                  "component_groups": [
+                      "got_out_of_powder_snow_environment_sensor"
+                  ]
+              }
+          },
+          "minecraft:spring_trap": {
+              "add": {
+                  "component_groups": [
+                      "minecraft:lightning_immune"
+                  ]
+              }
+          },
           "minecraft:melee_mode": {
               "remove": {
                   "component_groups": [
-                      "minecraft:ranged_attack"
+                      "minecraft:ranged_attack",
+                      "got_out_of_powder_snow_environment_sensor"
                   ]
               },
               "add": {
@@ -512,7 +686,8 @@
           "minecraft:ranged_mode": {
               "remove": {
                   "component_groups": [
-                      "minecraft:melee_attack"
+                      "minecraft:melee_attack",
+                      "got_out_of_powder_snow_environment_sensor"
                   ]
               },
               "add": {

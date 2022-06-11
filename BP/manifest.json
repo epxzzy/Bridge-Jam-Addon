@@ -1,9 +1,9 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Void Awakening 7 BP",
+    "name": "Void Awakening 16 BP",
     "description": "Bridge. Jam Add-On",
-    "uuid": "51d27d88-4674-4b01-b763-d4ec29e6dfea",
+    "uuid": "11111111-1111-4045-ac1d-3f6ae16f0323",
     "version": [
       1,
       0,
@@ -19,7 +19,7 @@
     {
       "type": "data",
       "description": "_",
-      "uuid": "50e0697c-3e0b-4dae-969d-af99a70a0107",
+      "uuid": "11111111-1111-4c8d-8495-1f094232e366",
       "version": [
         1,
         0,
@@ -29,7 +29,7 @@
   ],
   "dependencies": [
     {
-      "uuid": "5f7a5ea0-ae75-46cd-9380-2defe2909b40",
+      "uuid": "11111111-1111-12ae-bb4c-015257886b39",
       "version": [
         1,
         0,

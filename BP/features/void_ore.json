@@ -1,0 +1,19 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "jam:void_ore"
+		},
+		"count": 5, // Placement attempts
+		"replace_rules": [
+			{
+				"places_block": "jam:void_crystal_ore",
+				"may_replace": ["minecraft:stone"]
+			},
+			{
+				"places_block": "jam:void_crystal_ore_deepslate",
+				"may_replace": ["minecraft:deepslate"]
+			}
+		]
+	}
+}

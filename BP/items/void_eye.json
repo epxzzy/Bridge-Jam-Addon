@@ -2,18 +2,18 @@
     "format_version": "1.16.100",
     "minecraft:item": {
         "description": {
-            "identifier": "jam:void_shard",
+            "identifier": "jam:void_eye",
             "category": "nature"
         },
         "components": {
             "minecraft:hand_equipped": true,
             "minecraft:display_name": {
-                "value": "§5Void Shard§r"
+                "value": "§5Void Eye§r"
             },
             "minecraft:icon": {
-                "texture": "void_shard"
+                "texture": "void_eye"
             },
-            "minecraft:max_stack_size": 16
+            "minecraft:max_stack_size": 2
         }
     }
 }

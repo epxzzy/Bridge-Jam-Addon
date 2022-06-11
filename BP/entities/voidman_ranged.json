@@ -1,0 +1,158 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+      "description": {
+          "identifier": "jam:voidman_ranged",
+          "is_spawnable": true,
+          "is_summonable": true
+      },
+      "components": {
+          "minecraft:is_hidden_when_invisible": {},
+          "minecraft:experience_reward": {
+              "on_death": "query.last_hit_by_player ? 5 : 0"
+          },
+          "minecraft:type_family": {
+            "family": [
+      "void"
+    ]
+        },
+          "minecraft:breathable": {
+              "total_supply": 15,
+              "suffocate_time": 0
+          },
+          "minecraft:nameable": {},
+          "minecraft:loot": {
+              "table": "loot_tables/entities/voidman.json"
+          },
+          "minecraft:health": {
+              "value": 40,
+              "max": 40
+          },
+          "minecraft:behavior.ranged_attack": {
+            "priority": 1,
+            "charge_shoot_trigger": 0.7,
+            "charge_charged_trigger": 0,
+            "attack_interval_min": 1.7,
+            "attack_interval_max": 2.7,
+            "attack_radius": 15.0
+          },
+          "minecraft:shooter": {
+              "def": "jam:void_projectile"
+          },
+          "minecraft:hurt_on_condition": {
+              "damage_conditions": [
+                  {
+                      "filters": {
+                          "test": "in_lava",
+                          "subject": "self",
+                          "operator": "==",
+                          "value": true
+                      },
+                      "cause": "lava",
+                      "damage_per_tick": 4
+                  },
+                  {
+                      "filters": {
+                          "test": "in_contact_with_water",
+                          "operator": "==",
+                          "value": true
+                      },
+                      "cause": "drowning",
+                      "damage_per_tick": 1
+                  }
+              ]
+          },
+          "minecraft:attack": {
+              "damage": 8
+          },
+          "minecraft:follow_range": {
+              "value": 32,
+              "max": 32
+          },
+          "minecraft:collision_box": {
+              "width": 0.6,
+              "height": 2.9
+          },
+          "minecraft:despawn": {
+              "despawn_from_distance": {}
+          },
+          "minecraft:behavior.nearest_attackable_target": {
+            "must_see": true, //If true, potential target must be in mob's line of sight
+            "reselect_targets": true, //Allows mob to select new target, if one is closer than current
+            "within_radius": 25.0,
+            "entity_types": [
+              {
+                "filters": { //Entities to attack
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "max_dist": 48.0
+              },
+              {
+                "filters": { //Entities to attack
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "zombie"
+                },
+                "max_dist": 48.0
+              },
+              {
+                "filters": { //Entities to attack
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "skeleton"
+                },
+                "max_dist": 48.0
+              }
+            ]
+          },
+          "minecraft:navigation.walk": {
+              "can_path_over_water": false,
+              "avoid_water": true
+          },
+          "minecraft:behavior.melee_attack": {
+              "priority": 10,
+              "track_target": true,
+              "speed_multiplier": 0.025
+          },
+          "minecraft:movement": {
+              "value": 0.4,
+              "max": 0.4
+          },
+          "minecraft:movement.basic": {},
+          "minecraft:jump.static": {},
+          "minecraft:can_climb": {},
+          "minecraft:behavior.float": {
+              "priority": 0
+          },
+          "minecraft:behavior.random_stroll": {
+              "priority": 6,
+              "speed_multiplier": 1
+          },
+          "minecraft:behavior.look_at_player": {
+              "priority": 10,
+              "look_distance": 8,
+              "probability": 10
+          },
+          "minecraft:behavior.random_look_around": {
+              "priority": 8
+          },
+          "minecraft:behavior.hurt_by_target": {
+              "priority": 1
+          },
+          "minecraft:physics": {},
+          "minecraft:pushable": {
+              "is_pushable": true,
+              "is_pushable_by_piston": true
+          },
+          "minecraft:conditional_bandwidth_optimization": {
+              "default_values": {
+                  "max_optimized_distance": 80,
+                  "max_dropped_ticks": 10,
+                  "use_motion_prediction_hints": true
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+      "description": {
+        "identifier": "jam:void_projectile"
+      },
+      "components": {
+        "minecraft:stacked_by_data": true,
+        "minecraft:hand_equipped": true,
+        "minecraft:allow_off_hand": true,
+        "minecraft:projectile": {
+          "projectile_entity": "jam:void_projectile",
+          "minimum_critical_power": 1.0
+        },
+        "minecraft:display_name": {
+            "value": "Void Projectile"
+        },
+        "minecraft:max_stack_size": 64,
+        "minecraft:icon": {
+            "texture": "void_projectile"
+        }
+      }
+    }
+  }

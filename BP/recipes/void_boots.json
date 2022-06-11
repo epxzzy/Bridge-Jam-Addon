@@ -1,0 +1,25 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "# #",
+            "# #",
+            "   "
+        ],
+        "key": {
+            "#": {
+                "item": "jam:void_shard"
+            }
+        },
+        "result": {
+            "item": "jam:void_boots",
+            "count": 1
+        },
+        "description": {
+            "identifier": "jam:void_boots_recipe"
+        }
+    }
+}

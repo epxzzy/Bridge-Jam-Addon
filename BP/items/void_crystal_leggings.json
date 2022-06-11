@@ -1,0 +1,47 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "jam:void_leggings",
+			"category": "equipment"
+		},
+		"components": {
+			// We give it the leggings category this time
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.leggings"
+			},
+			// Give it an applicable ITEM texture
+			"minecraft:icon": {
+				"texture": "void_leggings"
+			},
+			"minecraft:display_name": {
+				"value": "Void Crystal Leggings"
+			},
+			"minecraft:max_stack_size": 1,
+			// Make sure the enchantments are for legs
+			"minecraft:enchantable": {
+				"value": 10,
+				"slot": "armor_legs"
+			},
+			"minecraft:armor": {
+				"protection": 7
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": ["minecraft:stick"],
+						"repair_amount": "context.other->query.remaining_durability + 0.05 * context.other->query.max_durability"
+					}
+				]
+			},
+			// Make sure the wearable slot is legs
+			"minecraft:wearable": {
+				"dispensable": true,
+				"slot": "slot.armor.legs"
+			},
+			"minecraft:durability": {
+				"max_durability": 540
+			}
+		}
+	}
+}

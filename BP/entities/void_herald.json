@@ -2,21 +2,97 @@
   "format_version": "1.16.100",
   "minecraft:entity": {
       "description": {
-          "identifier": "jam:voidman",
+          "identifier": "jam:void_herald",
           "is_spawnable": true,
-          "is_summonable": true
+          "is_summonable": true,
+          "animations": {
+              "herald_ac": "controller.animation.herald_ability"
+          },
+          "scripts": {
+              "animate": [
+                  "herald_ac"
+              ]
+          }
+      },
+      "component_groups": {
+          "stop_ability": {
+              "minecraft:variant": {
+                  "value": 0
+              }
+          },
+          "ability": {
+              "minecraft:variant": {
+                  "value": 1
+              },
+              "minecraft:timer": {
+                  "looping": true,
+                  "time": [
+                      0.2,
+                      0.2
+                  ],
+                  "time_down_event": {
+                      "event": "jam:stop_ability"
+                  }
+              }
+          },
+          "no_player": {
+              "minecraft:timer": {
+                  "time": [
+                      60,
+                      60
+                  ],
+                  "looping": false
+              },
+              "minecraft:entity_sensor": {
+                  "event": "jam:player_nearby",
+                  "event_filters": {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                  },
+                  "minimum_count": 1,
+                  "sensor_range": 20
+              }
+          },
+          "player": {
+              "minecraft:entity_sensor": {
+                  "event": "jam:player_nearby",
+                  "event_filters": {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                  },
+                  "maximum_count": 0,
+                  "sensor_range": 20
+              },
+              "minecraft:timer": {
+                  "time": [
+                      5,
+                      10
+                  ],
+                  "looping": true,
+                  "time_down_event": {
+                      "event": "jam:ability"
+                  }
+              }
+          }
       },
       "components": {
           "minecraft:is_hidden_when_invisible": {},
           "minecraft:nameable": {},
+          "minecraft:boss": {
+              "hud_range": 55,
+              "name": "Void Herald",
+              "should_darken_sky": false
+          },
           "minecraft:type_family": {
             "family": [
-              "void"
-            ]
+      "void"
+    ]
         },
           "minecraft:collision_box": {
-              "width": 0.6,
-              "height": 1.9
+              "width": 1.2,
+              "height": 2.5
           },
           "minecraft:movement.basic": {},
           "minecraft:navigation.walk": {
@@ -29,8 +105,8 @@
           "minecraft:jump.static": {},
           "minecraft:can_climb": {},
           "minecraft:health": {
-              "value": 40,
-              "max": 40
+              "value": 250,
+              "max": 250
           },
           "minecraft:hurt_on_condition": {
               "damage_conditions": [
@@ -53,13 +129,14 @@
               "breathes_water": true
           },
           "minecraft:attack": {
-              "damage": 7
+              "damage": 10
           },
           "minecraft:loot": {
-              "table": "loot_tables/entities/voidman.json"
+              "table": "loot_tables/entities/herald.json"
           },
           "minecraft:movement": {
-              "value": 0.35
+              "value": 0.4,
+              "max": 0.4
           },
           "minecraft:despawn": {
               "despawn_from_distance": {}
@@ -68,7 +145,7 @@
               "priority": 2
           },
           "minecraft:behavior.melee_attack": {
-              "priority": 3
+              "priority": 4
           },
           "minecraft:behavior.stomp_turtle_egg": {
               "priority": 4,
@@ -141,6 +218,36 @@
               "is_pushable_by_piston": true
           },
           "minecraft:conditional_bandwidth_optimization": {}
+      },
+      "events": {
+          "jam:stop_ability": {
+              "add": {
+                  "component_groups": [
+                      "stop_ability"
+                  ]
+              }
+          },
+          "jam:ability": {
+              "add": {
+                  "component_groups": [
+                      "ability"
+                  ]
+              }
+          },
+          "minecraft:entity_spawned": {
+              "add": {
+                  "component_groups": [
+                      "no_player"
+                  ]
+              }
+          },
+          "jam:player_nearby": {
+              "add": {
+                  "component_groups": [
+                      "player"
+                  ]
+              }
+          }
       }
   }
 }

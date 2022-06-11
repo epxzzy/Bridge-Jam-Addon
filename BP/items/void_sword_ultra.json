@@ -2,12 +2,12 @@
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "jam:void_sword",
+			"identifier": "jam:void_sword_ultra",
 			"category": "equipment"
 		},
 		"components": {
 			"minecraft:display_name": {
-				"value": "Void Sword"
+				"value": "Void God Sword"
 			},
 			"minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
@@ -17,9 +17,9 @@
 			"minecraft:durability": {
 				"max_durability": 1461
 			},
-			"minecraft:damage": 8,
+			"minecraft:damage": 10,
 			"minecraft:icon": {
-				"texture": "void_sword"
+				"texture": "void_sword_ultra"
 			},
 			"minecraft:enchantable": {
 				"value": 14,

@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.herald_ability": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "ability": "query.variant == 1"
+                        }
+                    ]
+                },
+                "ability": {
+                    "on_entry": [
+                        "/execute @a[r=10] ~~~ summon jam:ability_manager ~~~",
+                        "/execute @e[type=jam:ability_manager] ~~~ particle jam:ability_area",
+                        "/tellraw @a[r=10] {\"rawtext\":[{\"text\":\"§7[§f§kasdasdasd§7] §fThee shall be purged§l.\"}]}"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

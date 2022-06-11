@@ -1,0 +1,182 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "jam:void_portal",
+            "is_summonable": true,
+            "is_spawnable": true
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "height": 7,
+                        "width": 1,
+                        "pivot": [
+                            0,
+                            3.5,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 7,
+                        "width": 1,
+                        "pivot": [
+                            1,
+                            3.5,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 7,
+                        "width": 1,
+                        "pivot": [
+                            2,
+                            3.5,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 7,
+                        "width": 1,
+                        "pivot": [
+                            -1,
+                            3.5,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 7,
+                        "width": 1,
+                        "pivot": [
+                            -2,
+                            3.5,
+                            0
+                        ]
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 3,
+                "width": 3
+            },
+            "minecraft:interact": {
+                "interactions": [
+                  {
+                    "on_interact": {
+                      "filters": {
+                        "all_of": [
+                          {
+                            "test": "has_equipment",
+                            "subject": "other",
+                            "domain": "hand",
+                            "value": "jam:void_heart"
+                          },
+                          {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                          }
+                        ]
+                      }
+                    },
+                    "use_item": true,
+                    "cooldown_after_being_attacked": 0,
+                    "interact_text": "Give",
+                    "spawn_entities": "jam:void_herald"
+                  }
+                ]
+              },
+            "minecraft:timer": {
+                "time": 60,
+                "looping": true,
+                "time_down_event": {
+                    "event": "jam:fall"
+                }
+            },
+            "minecraft:despawn": {
+                "despawn_from_chance": true,
+                "despawn_from_inactivity": false,
+                "despawn_from_simulation_edge": false,
+                "min_range_inactivity_timer": 60,
+                "min_range_random_chance": 800,
+                "remove_child_entities": false
+            },
+            "minecraft:physics": {}
+        },
+        "component_groups": {
+            "jam:spawn_mobs": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "spawn_entity": "jam:zombie_infected",
+                            "max_wait_time": 5,
+                            "min_wait_time": 4,
+                            "num_to_spawn": 3,
+                            "should_leash": false,
+                            "single_use": true,
+                            "spawn_method": "born"
+                        },
+                        {
+                            "spawn_entity": "jam:voidman_ranged",
+                            "max_wait_time": 5,
+                            "min_wait_time": 4,
+                            "num_to_spawn": 2,
+                            "should_leash": false,
+                            "single_use": true,
+                            "spawn_method": "born"
+                        },
+                        {
+                            "spawn_entity": "jam:voidman",
+                            "max_wait_time": 5,
+                            "min_wait_time": 4,
+                            "num_to_spawn": 3,
+                            "should_leash": false,
+                            "single_use": true,
+                            "spawn_method": "born"
+                        },
+                        {
+                            "spawn_entity": "jam:skeleton_infected",
+                            "max_wait_time": 5,
+                            "min_wait_time": 4,
+                            "num_to_spawn": 2,
+                            "should_leash": false,
+                            "single_use": true,
+                            "spawn_method": "born"
+                        }
+                    ]
+                }
+            }
+        },
+        "events": {
+            "jam:fall": {
+                "run_command": {
+                    "command": [
+                        "kill @s"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "jam:spawn_mobs"
+                    ]
+                }
+            }
+        }
+    }
+}
