@@ -12,7 +12,9 @@ We Thought About It For About 2-3 hours, And We Came To The Conclusion of: "what
 
 ## Our Team
 [@PARV66](https://github.com/bridge-core/bridge-jam) (He Did Absolutely Nothing)
+
 [@Eldyn](https://github.com/bridge-core/bridge-jam) (Models, Textures and Code)
+
 [@LeGend077](https://github.com/bridge-core/bridge-jam) (Textures and code)
 
 ### RP Files: 
