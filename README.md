@@ -11,7 +11,7 @@ Kill The Voidmen, Close Their Portals, And Defeat The Void Herald!
 We Thought About It For About 2-3 hours, And We Came To The Conclusion of: "what if it isn't the minecraft world, but another dimension?" And We Ended up Creating This "dimension" Which is Not Actually Explorable, Mobs That Come From That Dimension Wish to Destroy The Overworld Thus Becoming Your Enemy.
 
 ## Our Team
-[@PARV66](https://github.com/bridge-core/bridge-jam) (He Did Absolutely Nothing)
+[@epxzzy](https://github.com/bridge-core/bridge-jam) (He Did Absolutely Nothing)
 
 [@Eldyn](https://github.com/bridge-core/bridge-jam) (Models, Textures and Code)
 
